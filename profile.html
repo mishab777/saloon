@@ -99,57 +99,6 @@
             margin-left: 150px;
             background-color: #fff;
         }
-        #calendar{
-            text-decoration: none;
-        }
-        .top-header h1{
-            font-size: 30px;
-        }
-        .two-buttons{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        .two-buttons .dropdown-item i{
-            margin-right: 8px;
-        }
-        .search-and-filter{
-            width: 100%;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: auto auto;
-            gap: 10px;
-            background-color: #e7e7e7;
-        }
-        .search-and-filter input{
-            width: auto;
-        }
-        .filter-btn{
-            background-color: #fff;
-            border: 1px solid #c7c7c7;
-            color: #000;
-            width: 120px;
-            border-radius: 5px;
-        }
-        .filter-btn i{
-            margin-left: 8px;
-        }
-        .table table{
-            width: 100%;
-        }
-        .table table th{
-            padding: 15px;
-            border: hidden;
-            border-bottom: 1px solid #dbdbdb;
-        }
-        .table table td{
-            padding: 15px;
-            border-bottom: 1px solid #dbdbdb;
-        }
     </style>
 </head>
 <body>
@@ -179,98 +128,142 @@
     </div>
 </div>
 <div class="sidebar">
-<a href="index.html"><img src="img/home.png" alt="">Dashboard</a>
+<a href=""><img src="img/home.png" alt="">Dashboard</a>
 <a href=""><img src="img/sales.png" alt="">Sales</a>
-<a href="calendar.html"><img src="img/calendar.png" alt="">Calendar</a>
-<a href="Client.html"><img src="img/client.png" alt="">Client</a>
+<a href=""><img src="img/calendar.png" alt="">Calendar</a>
+<a href=""><img src="img/client.png" alt="">Client</a>
 <a href=""><img src="img/booking.png" alt=""> Booking</a>
-<a href="branches.html"><img src="img/team.png" alt="">Branches</a>
+<a href=""><img src="img/team.png" alt="">Team</a>
 <a href=""><img src="img/wallet.png" alt="">Payment</a>
 <a href=""><img src="img/report.png" alt="">Report</a>
 <a href=""><img src="img/setting.png" alt="">Settings</a>
 </div>
+<style>
+    .top-header h3{
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .profile-card{
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    }
+    .profile-card-header{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ededed;
+    }
+    .profile-card-header h4{
+        font-size: 20px;
+    }
+    .profile-card-content{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+    }
+    .profile-card-content h5{
+        font-size: 16px;
+    }
+</style>
 <div class="main-content p-4">
     <div class="container top-header">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Clients list</h1>
-                <span>View, add, edit and delete your client's details.</span>
-            </div>
-            <div class="col-md-6">
-                <div class="two-buttons">
-                    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Options
-                      </button>
-                    <button class="btn btn-dark">Add</button>  
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i>Import Clients</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-retweet"></i>Merge Clients</a></li>
-                      </ul>
+       <h3 class="">Profile</h3>
+       <p>Keep your account secure and manage your personal information and social logins.</p>
+       <div class="row gx-3 gy-3">
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h4>Personal Info</h4>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-dark"><i class="fa-regular fa-pen-to-square"></i></button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <h4>Edit Personal Info</h4>
+                              <p>Provide your personal details so that we can verify your identity.</p>
+                              <form action="">
+                                <div class="form-group mb-3">
+                                    <label for="">First Name</label>
+                                    <input type="text" name="" value="Sandra" id="" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Last Name</label>
+                                    <input type="text" name="" id="" value="Vinod" class="form-control">
+                                </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer mt-3">
+                              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-dark">Save</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                </div>
+                <div class="profile-card-content">
+                    <h5>Legal Name</h5>
+                    <span>Sandra Vinod</span>
                 </div>
             </div>
         </div>
-        <div class="search-and-filter mt-3">
-            <input type="search" class="form-control" placeholder="Search by name,email or mobile">
-            <button class="filter-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Filter<i class="fa-solid fa-arrow-down-wide-short"></i></button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Filters</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <form action="">
-                        <div class="form-group mb-3">
-                            <label for="">Client group</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">1</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Gender</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">1</option>
-                            </select>
-                        </div>
-                    </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Clear Filters</button>
-                      <button type="button" class="btn btn-dark">Apply</button>
-                    </div>
-                  </div>
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h4>Contact Details</h4>
+                    <button class="btn btn-dark"><i class="fa-regular fa-pen-to-square"></i></button>
                 </div>
-              </div>
+                <div class="profile-card-content">
+                    <h5>Mobile Number</h5>
+                    <span>+91********46</span>
+                </div>
+                <div class="profile-card-content">
+                    <h5>Email Address</h5>
+                    <span>s******7@gmail.com</span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container mt-4 table">
-        <table>
-            <tr>
-                <th><input type="checkbox"></th>
-                <th>Client Name</th>
-                <th>Mobile Number</th>
-                <th>Reviews</th>
-                <th>Sales</th>
-                <th>Created At</th>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>John Doe</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>13 Sep 2024</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>John Doe</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>13 Sep 2024</td>
-            </tr>
-        </table>
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h4>Security</h4>
+                </div>
+                <div class="profile-card-content">
+                    <h5>Password</h5>
+                    <span>Your password is managed by social logins</span>
+                    <button class="mt-3 btn btn-outline-dark">Create New Password</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="profile-card-header">
+                    <h4>Delete Account</h4>
+                </div>
+                <div class="profile-card-content">
+                    <span>You will delete all your personal info and won't be able to retrieve it. Are you sure you want to delete your account?</span>
+                    <button class="mt-3 btn btn-danger">Delete Your Account</button>
+                </div>
+            </div>
+        </div>
+       </div>
     </div>
 </div>
 
